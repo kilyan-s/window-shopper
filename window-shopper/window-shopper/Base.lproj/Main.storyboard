@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperBG" translatesAutoresizingMaskIntoConstraints="NO" id="PcA-NY-Mu6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HwE-pA-AG5">
+                                <rect key="frame" x="172" y="108" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="K23-Hv-xZ9"/>
+                                    <constraint firstAttribute="height" constant="70" id="xA8-qi-Yrp"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gll-4w-5im" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="238" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Cci-te-zkc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asx-7o-MFB" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="303" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GRN-TT-apb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gll-4w-5im" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6fS-J0-0Ig"/>
+                            <constraint firstItem="asx-7o-MFB" firstAttribute="trailing" secondItem="Gll-4w-5im" secondAttribute="trailing" id="A1n-cK-2OG"/>
+                            <constraint firstItem="PcA-NY-Mu6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABg-81-aBK"/>
+                            <constraint firstItem="PcA-NY-Mu6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="EK0-xb-CCY"/>
+                            <constraint firstItem="asx-7o-MFB" firstAttribute="leading" secondItem="Gll-4w-5im" secondAttribute="leading" id="GIg-NL-p5k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gll-4w-5im" secondAttribute="trailing" constant="20" id="Mj1-Sp-e7a"/>
+                            <constraint firstItem="asx-7o-MFB" firstAttribute="height" secondItem="Gll-4w-5im" secondAttribute="height" id="T2o-bh-26n"/>
+                            <constraint firstItem="HwE-pA-AG5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UFZ-Yd-ON9"/>
+                            <constraint firstItem="asx-7o-MFB" firstAttribute="top" secondItem="Gll-4w-5im" secondAttribute="bottom" constant="25" id="WZ3-rq-AkA"/>
+                            <constraint firstItem="PcA-NY-Mu6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bZt-7C-blu"/>
+                            <constraint firstItem="Gll-4w-5im" firstAttribute="top" secondItem="HwE-pA-AG5" secondAttribute="bottom" constant="60" id="nT3-AB-xA7"/>
+                            <constraint firstAttribute="bottom" secondItem="PcA-NY-Mu6" secondAttribute="bottom" id="rpE-Ug-Rwg"/>
+                            <constraint firstItem="HwE-pA-AG5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="uu8-YZ-nLu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="asx-7o-MFB" id="q7W-BL-SQi"/>
+                        <outlet property="wageTxt" destination="Gll-4w-5im" id="dWb-2E-4Vi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="windowShopperBG" width="414" height="736"/>
+        <image name="windowShopperIcon" width="115" height="115"/>
+    </resources>
 </document>
